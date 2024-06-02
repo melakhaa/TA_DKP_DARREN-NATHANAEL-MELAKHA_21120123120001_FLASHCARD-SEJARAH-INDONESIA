@@ -148,12 +148,10 @@ class FlashcardApp:
     def on_enter_key(self, event):
         if self.answer_checked:
             self.next_card()
-        elif self.forward_stack:
-            self.check_answer()
         else:
-            messagebox.showinfo("Peringatan", "Tidak ada pertanyaan yang tersedia.")
-            self.user_input.focus_set()  
-
+            self.forward_stack
+            self.check_answer()
+        
 def main():
     root = tk.Tk()
     app = FlashcardApp(root)
